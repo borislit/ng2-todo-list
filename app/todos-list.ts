@@ -5,7 +5,7 @@ import {TodosService} from './todos-service';
   selector: 'todos-list',
   template: `
     <div>Todos:</div>
-    <div *ngFor="let todo of getTodos()">{{todo.value}}</div>
+    <div *ngFor="let todo of getTodos()" (click)="completeItem(todo)" [hidden]="todo.complete">{{todo.value}}</div>
   `
 })
 export class TodosList {
@@ -17,5 +17,9 @@ export class TodosList {
 
   getTodos() {
     return this.todosService.todos;
+  }
+
+  completeItem(item) {
+    this.todosService.completeItem(item);
   }
 }

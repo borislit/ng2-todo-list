@@ -12,4 +12,8 @@ export class TodosService {
   getTodos() {
     return this.todos;
   }
+
+  completeItem(item: TodoItem) {
+    item.complete = true;
+  }
 }
