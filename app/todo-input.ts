@@ -3,8 +3,8 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'todo-input',
   template: `
-    <input type="text" #todoInput [value]="defaultValue" (input)="defaultValue = todoInput.value"/>
-    <button type="button" (click)="onAddClicked(todoInput.value)">Add</button>
+    <input type="text" #todoInput [(ngModel)]="defaultValue"/>
+    <button type="button" (click)="onAddClicked()">Add</button>
     {{defaultValue}}
   `
 })
@@ -13,5 +13,6 @@ export class TodoInput {
 
   onAddClicked() {
     console.log(this.defaultValue);
+    this.defaultValue = this.defaultValue + 'foo';
   }
 }
