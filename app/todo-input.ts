@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'todo-input',
@@ -9,10 +9,13 @@ import {Component} from '@angular/core';
   `
 })
 export class TodoInput {
+  @Output() onAdd = new EventEmitter();
   defaultValue = 'Enter Value Here';
 
   onAddClicked() {
     console.log(this.defaultValue);
-    this.defaultValue = this.defaultValue + 'foo';
+    this.onAdd.emit(this.defaultValue);
   }
 }
+
+
