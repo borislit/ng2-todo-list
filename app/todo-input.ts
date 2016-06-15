@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {TodosService} from './todos-service';
+import {TodoItem} from './todo-item';
 
 @Component({
   selector: 'todo-input',
@@ -12,14 +13,14 @@ export class TodoInput {
   @Output() onAdd = new EventEmitter();
   defaultValue = 'Enter Value Here';
 
-  constructor(private todosService: TodosService){
+  constructor(private todosService: TodosService) {
 
   }
 
   onAddClicked() {
     console.log(this.defaultValue);
     this.onAdd.emit(this.defaultValue);
-    this.todosService.addTodo(this.defaultValue);
+    this.todosService.addTodo(new TodoItem(this.defaultValue, false));
   }
 }
 
