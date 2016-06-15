@@ -4,10 +4,10 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
+    "outDir": "dist/",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
+    "noImplicitAny": false
   }
 }
