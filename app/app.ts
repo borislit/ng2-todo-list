@@ -1,12 +1,13 @@
 import {Component} from '@angular/core';
 import {TodoInput} from './todo-input';
+import {TodosList} from './todos-list';
 
 @Component({
   selector: 'my-app',
-  directives: [TodoInput],
+  directives: [TodoInput, TodosList],
   template: `
     <todo-input (onAdd)="todoAdded($event)"></todo-input>
-    <div *ngFor="let todo of todos">{{todo}}</div>
+    <todos-list [todos]="todos"></todos-list>
   `,
 })
 export class AppComponent {
