@@ -5,7 +5,6 @@ import {Component, EventEmitter, Output} from '@angular/core';
   template: `
     <input type="text" #todoInput [(ngModel)]="defaultValue"/>
     <button type="button" (click)="onAddClicked()">Add</button>
-    {{defaultValue}}
   `
 })
 export class TodoInput {
