@@ -8,6 +8,7 @@ import {TodosList} from './todos-list';
   template: `
     <todo-input></todo-input>
     <todos-list></todos-list>
+    <div class="complete">Test</div>
   `,
 })
 export class AppComponent {
